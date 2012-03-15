@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <base href="%@">
+  <script language="Javascript" src="lib/scriptaculous183.js"></script>
+  <script language="Javascript">
+    client.debugLog("TEST FOO");
+    Event.observe(window,'load', function(){
+      updateScroll();
+    });
+    function updateScroll() {
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+    function appendMessage(html) {
+      html = scrubHTML(html);
+      var insert = document.getElementById("insert");
+      if(insert) insert.parentNode.removeChild(insert);
+      var chat = document.getElementById("scrollbar_content");
+      var range = document.createRange();
+      range.selectNode(chat);
+      var documentFragment = range.createContextualFragment(html);
+      chat.appendChild(documentFragment);
+      var lastChildID = $('scrollbar_content').lastElementChild.identify();
+      new Effect.Opacity($(lastChildID), {to:.99, duration:1});
+      updateScroll();
+    }
+    function appendNextMessage(html){
+      html = scrubHTML(html);
+      var insert = document.getElementById("insert");
+      range = document.createRange();
+      range.selectNode(insert.parentNode);
+      newNode = range.createContextualFragment(html);
+      insert.parentNode.replaceChild(newNode,insert);
+      updateScroll();
+    }
+
+    function scrubHTML(html) {
+      // unescape HTML entities
+      html = html.replace(/&amp;/ig, '&');
+      html = html.replace(/&lt;/ig, '<');
+      html = html.replace(/&gt;/ig, '>');
+      // undo Adium's terrible auto-linking
+      html = html.replace(/"<a href="https?:\/\/.+?" title="https?:\/\/.+?">(https?:\/\/.+?)<\/a>"/g, '"$1"');
+      // strip targets
+      html = html.replace(/target="_blank"/g, '');
+      return html
+    }
+
+    // function colorizeMessage(elem) {
+    //   var message = elem.firstChild;
+    //   var sender = message.querySelector('#sender');
+    //   var contents = message.querySelector('#contents');
+
+    //   // Colorize our messages
+    //   if(/github/gi.test(sender.textContent)) {
+    //     messageClass = "systemMessage";
+    //   } else if(/You have connected/gi.test(message.textContent)) {
+    //     newContent = document.createTextNode('Welcome!');
+    //     sender.appendChild(newContent);
+    //     messageClass = "welcomeMessage";
+    //   } else if(/jenkins/gi.test(sender.textContent)) {
+    //     if(/failed/gi.test(contents.textContent)) {
+    //       messageClass = "systemMessage red";
+    //     } else {
+    //       messageClass = "systemMessage green";
+    //     }
+    //   } else {
+    //     messageClass = "";
+    //   }
+
+    //   $(message).addClass("welcomeMessage");
+    //   $(elem).addClass("welcomeMessage");
+    //   return elem;
+    // }
+  </script>
+  <style id="mainStyle" type="text/css" media="screen,print"> @import url( "%@" ); </style>
+</head>
+<body style="==bodyBackground==" id="body">
+<div id="scrollbar_container">
+  <div id="scrollbar_content"></div>
+</div>
+<div id="filler"></div>
+</body>
+</html>
