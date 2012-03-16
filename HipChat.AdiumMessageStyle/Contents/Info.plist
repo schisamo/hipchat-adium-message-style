@@ -7,7 +7,7 @@
   <key>CFBundleGetInfoString</key>
   <string>HipChat 1.0</string>
   <key>CFBundleIdentifier</key>
-  <string>com.adiumx.hipchat.style</string>
+  <string>schisamo.hipchat.style</string>
   <key>CFBundleInfoDictionaryVersion</key>
   <string>1.0</string>
   <key>CFBundleName</key>
