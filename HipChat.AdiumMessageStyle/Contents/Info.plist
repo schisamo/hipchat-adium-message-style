@@ -5,7 +5,7 @@
   <key>CFBundleDevelopmentRegion</key>
   <string>English</string>
   <key>CFBundleGetInfoString</key>
-  <string>HipChat 1.0</string>
+  <string>1.1</string>
   <key>CFBundleIdentifier</key>
   <string>schisamo.hipchat.style</string>
   <key>CFBundleInfoDictionaryVersion</key>
