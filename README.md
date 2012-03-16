@@ -15,14 +15,14 @@ folder:
 
 * Full message theming insipired by HipChat's official style sheet
 * Proper hyperlinking of system messages...things like GitHub [commit messages](http://blog.hipchat.com/2010/05/25/github-adds-hipchat-support/).
+* Proper formatting of [@ mentions](https://www.hipchat.com/help/page/how-do-mentions-work)
+* Accurate coloring of most system messages..ie Github, Jenkins etc.
 
 Coming Soon:
 
-* Configurable (accurate) coloring of most system messages..ie Github,
-Jenkins etc.
-* Proper formatting of [@ mentions](https://www.hipchat.com/help/page/how-do-mentions-work)
 * Inline previews for images
 * Inline previews for YouTube videos
+* Make system message => color mapping configurable
 
 # Author
 

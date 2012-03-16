@@ -21,7 +21,7 @@
   <key>DefaultFontSize</key>
   <integer>12</integer>
   <key>MessageViewVersion</key>
-  <integer>1</integer>
+  <integer>4</integer>
   <key>ShowsUserIcons</key>
   <true/>
 </dict>
