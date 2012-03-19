@@ -430,3 +430,22 @@ border-left:none;
 visibility: hidden;
 }
 
+/* make Adium join/part messages look like HipChat join/part */
+.systemMessage.purple {
+background-color: white;
+border-top:1px solid #E1E1E1;
+}
+
+.systemMessage.purple .messageBlock {
+background-color: white;
+border-left:none;
+}
+
+.systemMessage.purple .nameBlock {
+background-color: transparent;
+border:none;
+}
+
+.systemMessage.purple p {
+  color: #777;
+}
