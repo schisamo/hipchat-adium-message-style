@@ -396,3 +396,33 @@ p.monospace, .messageBlock p.monospace
 * {
 font-family:monospace;
 }
+
+/* MESSAGE STYLE COMPAT */
+
+/* make Adium date_separator status look like HipChat's dateDividers */
+.date_separator {
+background:#F4F4F4 url(/img/sidebar_header_bg.png) repeat-x scroll 0 100%;
+color:#333;
+font-weight:700;
+font-family:'Lucida Grande',tahoma,sans-serif;
+font-size:11px;
+text-align:center;
+border-top:1px solid #CECECE;
+padding:0;
+}
+
+.date_separator .nameBlock {
+display: none;
+background-color:transparent;
+border:none;
+}
+
+.date_separator .messageBlock {
+background-color:transparent;
+border-left:none;
+}
+
+.date_separator .timeBlock {
+visibility: hidden;
+}
+
