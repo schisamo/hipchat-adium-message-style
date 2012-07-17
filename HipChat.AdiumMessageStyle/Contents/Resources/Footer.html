@@ -39,7 +39,7 @@ function hipChatizeHTML(html) {
     senderNode.innerText = truncatedSender;
 
     // Colorize the message
-    if(/github|(chef\sclient)/gi.test(rawSender)) {
+    if(/github|(chef\sclient)|agilezen/gi.test(rawSender)) {
       messageClass = "systemMessage";
     } else if(/You have connected/gi.test(rawMessage)) {
       newContent = document.createTextNode('Welcome!');
