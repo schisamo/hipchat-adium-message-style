@@ -46,7 +46,7 @@ function hipChatizeHTML(html) {
       senderNode.appendChild(newContent);
       messageClass = "welcomeMessage";
     } else if(/jenkins/gi.test(rawSender)) {
-      if(/failed/gi.test(rawMessage)) {
+      if(/fail(ed|ure)/gi.test(rawMessage)) {
         messageClass = "systemMessage red";
       } else {
         messageClass = "systemMessage green";
