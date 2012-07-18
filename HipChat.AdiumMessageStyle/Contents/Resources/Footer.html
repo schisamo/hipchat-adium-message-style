@@ -48,7 +48,11 @@ function hipChatizeHTML(html) {
     } else if(/jenkins/gi.test(rawSender)) {
       if(/fail(ed|ure)/gi.test(rawMessage)) {
         messageClass = "systemMessage red";
-      } else {
+      }
+      else if(/abort(ed)?/gi.test(rawMessage)){
+        messageClass = "systemMessage red";
+      }
+      else {
         messageClass = "systemMessage green";
       }
     } else {
