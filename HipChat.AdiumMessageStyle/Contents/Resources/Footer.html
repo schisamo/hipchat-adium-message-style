@@ -21,7 +21,7 @@ function hipChatizeHTML(html) {
   // scrub the raw message
   rawMessage = scrubHTML(rawMessage);
   // add style to @ mentions
-  messageNode.innerHTML = rawMessage.replace(/(@"*[\d\w]*)/, '<span class="atTag">$1</span>');
+  messageNode.innerHTML = rawMessage.replace(/(@"*[\d\w]*)(:|,| )/g, '<span class="atTag">$1</span>');
 
   var senderNode = html.querySelector('#sender');
 
@@ -39,16 +39,20 @@ function hipChatizeHTML(html) {
     senderNode.innerText = truncatedSender;
 
     // Colorize the message
-    if(/github|(chef\sclient)/gi.test(rawSender)) {
+    if(/github|(chef\sclient)|agilezen/gi.test(rawSender)) {
       messageClass = "systemMessage";
     } else if(/You have connected/gi.test(rawMessage)) {
       newContent = document.createTextNode('Welcome!');
       senderNode.appendChild(newContent);
       messageClass = "welcomeMessage";
     } else if(/jenkins/gi.test(rawSender)) {
-      if(/failed/gi.test(rawMessage)) {
+      if(/fail(ed|ure)/gi.test(rawMessage)) {
         messageClass = "systemMessage red";
-      } else {
+      }
+      else if(/abort(ed)?/gi.test(rawMessage)){
+        messageClass = "systemMessage red";
+      }
+      else {
         messageClass = "systemMessage green";
       }
     } else {
