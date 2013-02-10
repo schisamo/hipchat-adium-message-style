@@ -25,7 +25,7 @@ function hipChatizeHTML(html) {
   messageNode.innerHTML = rawMessage.replace(/(@"*[\d\w]*)/, '<span class="atTag">$1</span>');
 
   // add inline images
-  messageNode.innerHTML = rawMessage.replace(/<a.*href="(.*?\.(?:jpg|jpeg|png))".*>.*<\/a>/, '<a class="image" href="$1"><img src="$1"></a>');
+  messageNode.innerHTML = rawMessage.replace(/<a.*href="(.*?\.(?:jpg|jpeg|png|gif))".*>.*<\/a>/, '<a class="image" href="$1"><img src="$1"></a>');
 
   var senderNode = html.querySelector('#sender');
 
