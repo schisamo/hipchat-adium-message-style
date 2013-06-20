@@ -11,6 +11,10 @@ folder:
 
     ln -s ~/dev/code/hipchat-adium-message-style/HipChat.AdiumMessageStyle ~/Library/Application\ Support/Adium\ 2.0/Message\ Styles/HipChat.AdiumMessageStyle
 
+# Configuration
+
+Go to **Adium** => **Preferences** => **Messages**.  Find the **Message Style** dropdown and select **HipChat**.
+
 # Features
 
 * Full message theming insipired by HipChat's official style sheet
