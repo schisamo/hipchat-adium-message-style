@@ -21,7 +21,7 @@ function hipChatizeHTML(html) {
   // scrub the raw message
   rawMessage = scrubHTML(rawMessage);
   // add style to @ mentions
-  messageNode.innerHTML = rawMessage.replace(/(@"*[\d\w]*)/, '<span class="atTag">$1</span>');
+  messageNode.innerHTML = rawMessage.replace(/(^|\W)(@"*[\d\w]*)/g, '$1<span class="atTag">$2</span>');
 
   var senderNode = html.querySelector('#sender');
 
